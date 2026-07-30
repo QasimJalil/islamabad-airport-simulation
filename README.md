@@ -62,7 +62,7 @@ Visual Paradigm (BPMN 2.0) · Simul8 (discrete-event simulation) · Excel · Bus
 
 - `.vpp` — Visual Paradigm. The rendered `.jpg` alongside each model lets you read the process without a licence.
 - `.S8` — Simul8. There are two: `simulation/as-is-islamabad-airport.S8` is the baseline model of current operations, and `simulation/to-be-islamabad-airport.S8` is the re-engineered design. The results table above is the direct comparison between them. If you don't have Simul8, `simulation/simulation-report.pdf` documents both models and their outputs.
-- A recorded video demonstration of the simulation running was submitted with the project. It is too large for GitHub — available on request.
+- **[Video demonstration of the simulation running →](https://youtu.be/zFs3OnL9DQU)** — submitted with the project. Worth watching if you want to see the models in motion without installing Simul8.
 
 ## A note on research data
 
