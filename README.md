@@ -46,7 +46,8 @@ Raw figures: [`results/kpi-graphs.xlsx`](results/kpi-graphs.xlsx)
 ```
 models/as-is/       AS-IS BPMN model (Visual Paradigm .vpp) + rendered diagram
 models/to-be/       TO-BE BPMN model (Visual Paradigm .vpp) + rendered diagram
-simulation/         Simul8 model (.S8), input distribution tables, simulation report
+simulation/         AS-IS and TO-BE Simul8 models (.S8), input distribution tables,
+                    simulation report
 results/            KPI comparison screenshots and the underlying spreadsheet
 results/simul8-screens/   Model configuration evidence — distributions, routing,
                           resources, clock properties, labels
@@ -60,7 +61,8 @@ Visual Paradigm (BPMN 2.0) · Simul8 (discrete-event simulation) · Excel · Bus
 ## Opening the files
 
 - `.vpp` — Visual Paradigm. The rendered `.jpg` alongside each model lets you read the process without a licence.
-- `.S8` — Simul8. `simulation/simulation-report.pdf` documents the model and its results if you don't have Simul8.
+- `.S8` — Simul8. There are two: `simulation/as-is-islamabad-airport.S8` is the baseline model of current operations, and `simulation/to-be-islamabad-airport.S8` is the re-engineered design. The results table above is the direct comparison between them. If you don't have Simul8, `simulation/simulation-report.pdf` documents both models and their outputs.
+- A recorded video demonstration of the simulation running was submitted with the project. It is too large for GitHub — available on request.
 
 ## A note on research data
 
