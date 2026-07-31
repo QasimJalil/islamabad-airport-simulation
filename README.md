@@ -11,6 +11,12 @@ Graded as part of a First Class degree.
 
 Islamabad International Airport's terminal processes were built around manual, staff-mediated steps: agent-led check-in, single-stream immigration, and a security funnel with no parallel capacity. Passengers experienced long, compounding queues, and the airport had no way to test an intervention without disrupting live operations.
 
+**AS-IS — current terminal flow, modelled in Simul8**
+
+![AS-IS Simul8 model of Islamabad International Airport terminal flow](results/AS-IS.png)
+
+Every passenger funnels through the same sequence. Class-based lanes exist at check-in and boarding, but immigration and security are single-stream for everyone — which is exactly where the queues compound.
+
 ## What I did
 
 1. **Elicited requirements** from an airport stakeholder through informal interviews under Brunel-approved research ethics.
@@ -18,6 +24,15 @@ Islamabad International Airport's terminal processes were built around manual, s
 3. **Built a discrete-event simulation** in Simul8, calibrated against observed arrival rates and service times.
 4. **Designed a TO-BE process** applying business process re-engineering principles: self-service check-in and bag drop, a fast-track immigration lane, parallel body-scanning capacity, and self-boarding gates.
 5. **Re-ran the simulation** against the TO-BE model and measured the difference on a fixed set of KPIs.
+
+**TO-BE — re-engineered terminal flow**
+
+![TO-BE Simul8 model with parallel capacity — e-gate entry, self-service check-in, automated bag drop, fast-track immigration and self-boarding](results/TO-BE.png)
+
+The structural change is visible without reading a single number: where the AS-IS model is one path, the TO-BE model opens parallel capacity at every stage — electronic gate entry, self-service kiosks alongside conventional check-in, automated luggage drop, a fast-track immigration lane, and self-boarding gates. Passengers who can self-serve stop blocking those who can't.
+
+**Full BPMN process models** (Visual Paradigm source in `models/`, rendered diagrams for viewing without a licence):
+[AS-IS BPMN →](models/as-is/as-is-terminal-bpmn.jpg) · [TO-BE BPMN →](models/to-be/to-be-terminal-bpmn.jpg)
 
 ## Results
 
@@ -40,6 +55,14 @@ Simulated over an equivalent operating period, same arrival profile:
 The dominant single win was security: adding parallel body-scanning capacity removed the terminal's hardest bottleneck. Halving end-to-end journey time while *increasing* throughput 14% means the gain came from removing queueing waste, not from adding headcount.
 
 Raw figures: [`results/kpi-graphs.xlsx`](results/kpi-graphs.xlsx)
+
+### The numbers, straight out of Simul8
+
+Rather than ask anyone to take the table on trust, here is the TO-BE run in Simul8's Results Manager — average time in system **78.73 minutes**, number completed **6,129**, each with 95% confidence intervals from multiple trials:
+
+![Simul8 Results Manager showing TO-BE run — 78.73 min average time in system, 6,129 passengers completed, with 95% confidence ranges](results/TO-BE-RESULTS.png)
+
+The AS-IS equivalent is at [`results/AS-IS-RESULTS.png`](results/AS-IS-RESULTS.png). Model configuration evidence — arrival distributions, routing logic, resource allocation, clock properties and trial settings — is in [`results/simul8-screens/`](results/simul8-screens/), so the model can be audited rather than just believed.
 
 ## Repository contents
 
